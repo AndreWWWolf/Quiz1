@@ -36,27 +36,6 @@ app.use((request, response, next) => {
     next();
   });
 
-  //ROUTES//
-  app.get('/', (request, response) => {
-    response.render('homePage');
-  });
-
-
-
-//Create Cookie && Sign In
-  const COOKIE_MAX_AGE = 1000 * 60 * 60 * 24 * 7;
-  app.post('/signIn', (request, response) => {
-    const username = request.body.username;
-    response.cookie('username', username, { maxAge: COOKIE_MAX_AGE });
-    response.redirect('/');
-  });
-  
-//Delete Cookie && SignOut
-  app.post('/signOut', (request, response) => {
-    response.clearCookie('username');
-    response.redirect('/');
-  });
-
   app.use('/', rootRouter);
   app.use('/articles', articlesRouter);
 
