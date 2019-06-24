@@ -36,6 +36,14 @@ app.use((request, response, next) => {
     next();
   });
 
+  app.get('/articles/newCluck', (request, response) => {
+    response.render('articles/newCluck');
+  });
+
+  app.get('/articles/myClucks', (request, response) => {
+    response.render('articles/myClucks');
+  });
+
   app.use('/', rootRouter);
   app.use('/articles', articlesRouter);
 
