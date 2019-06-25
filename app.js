@@ -27,21 +27,13 @@ console.log('__dirname:', __dirname);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((request, response, next) => {
-    console.log("🍪 Cookies:", request.cookies);
+    // console.log("🍪 Cookies:", request.cookies);
     response.locals.username = "";
     const username = request.cookies.username;
     if (username) {
       response.locals.username = username;
     }
     next();
-  });
-
-  app.get('/articles/newCluck', (request, response) => {
-    response.render('articles/newCluck');
-  });
-
-  app.get('/articles/myClucks', (request, response) => {
-    response.render('articles/myClucks');
   });
 
   app.use('/', rootRouter);

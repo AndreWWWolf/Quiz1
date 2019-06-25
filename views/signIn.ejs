@@ -1,0 +1,17 @@
+<%- include("./partials/header") %>
+
+<% if (username) { %>
+        <span>
+          😎 <%= username %>
+        </span>
+        <form class="sign-out-form" action="/signOut" method="POST">
+          <input type="submit" value="Sign Out">
+        </form>
+      <% } else { %>      
+        <form class="sign-in-form" action="/signIn" method="POST">
+          <input type="text" name="username" placeholder="Username">
+          <input type="submit" value="Sign In">
+        </form>
+      <% } %>
+
+<%- include("./partials/footer") %>

@@ -1,8 +1,8 @@
 <%- include("../partials/header") %>
-
 <h1>New Cluck</h1>
 
 <form action="/articles" method="POST">
+<%= username %>
   <div>
     <input type="text" name="title" placeholder="Whatchu Cluckin Bout?">
   </div>
@@ -12,8 +12,15 @@
       name="content"
       cols="50"
       rows="10"
-      placeholder="What are your thoughts?"
-    ></textarea>
+      placeholder="What are your thoughts?">
+      </textarea>
+  <br>    
+    <textarea
+      name="image_url"
+      cols="50"
+      rows="1"
+      placeholder="image address:">
+      </textarea>
   </div>
 
   <input type="submit" value="Create Article">
