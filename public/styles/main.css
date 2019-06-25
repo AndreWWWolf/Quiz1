@@ -44,3 +44,7 @@ html {
   .sign-out-form {
     margin-left: auto;
   }
+
+  .cluck {
+    border-radius: 1em solid black;
+  }

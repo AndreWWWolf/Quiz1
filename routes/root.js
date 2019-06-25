@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const knex = require("../db/client");
 
 //Routes to Pages
 router.get('/', (request, response) => {
@@ -15,7 +16,11 @@ router.get('/', (request, response) => {
   });
 
   router.get('/articles/myClucks', (request, response) => {
-    response.render('articles/myClucks');
+    knex("clucks")
+    .orderBy("created_at", "DESC")
+    .then(clucks => {
+      response.render("articles/myClucks", { clucks: clucks });
+    });
   });
 
 //Create Cookie

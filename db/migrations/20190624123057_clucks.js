@@ -1,5 +1,5 @@
 exports.up = function(knex, Promise) {
-    return knex.schema.createTable("clucks", t => {
+    return knex.schema.createTable('clucks', t => {
         t.string("username");
         t.string("image_url");
         t.string("content");
