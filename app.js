@@ -39,7 +39,7 @@ app.use((request, response, next) => {
   app.use('/', rootRouter);
   app.use('/articles', articlesRouter);
 
-const PORT = 4000;
+const PORT = 5000;
 const ADDRESS = "localhost";
 app.listen(PORT, ADDRESS, () => {
   console.log(`Server listenning on http://${ADDRESS}:${PORT}`);
