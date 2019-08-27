@@ -1,0 +1,26 @@
+<%- include("../partials/header") %>
+
+<h1>All Of My Clucks</h1>
+<div>
+<% for (let i of clucks) {%>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <img width="100" src="/Users/andrewwolf/CodeCore/Quiz1/public/images/front-facing-baby-chick_1f425.png">
+          </div>
+            <div>
+            <p> <%= i.username %> </p>
+            <p> <%= i.content %> </p>
+            <img src="<%= i.image_url %>"/>
+            <p> <%= i.created_at %> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% }  %>
+</div>
+
+<%- include("../partials/footer") %>

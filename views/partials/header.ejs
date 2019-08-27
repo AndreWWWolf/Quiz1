@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cluckr</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <script src="/scripts/main.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="/articles/myClucks" >
+        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/198/front-facing-baby-chick_1f425.png" alt="chicken" style="width:42px;height:42px;border:0;" >
+      </a>
+
+      <a href="/articles/newCluck">
+        <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/twitter/185/speech-balloon_1f4ac.png" alt="bubble" style="width:42px;height:42px;border:0;" >
+      </a>
+
+      <% if (username) { %>
+        <span>
+         <h1>Welcome to Cluckr</h1><h2><%= username %></h2>
+        </span>
+        <form class="sign-out-form" action="/signOut" method="POST">
+          <input type="submit" value="Sign Out">
+        </form>
+      <% } else { %>      
+        <form class="sign-in-form" action="/signIn" method="POST">
+          <input type="text" name="username" placeholder="Username">
+          <input type="submit" value="Sign In">
+        </form>
+      <% } %>
+    </nav>
+  </header>
+
+  <main>

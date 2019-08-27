@@ -1,0 +1,18 @@
+<%- include("../partials/header") %>
+<h1>New Cluck</h1>
+
+<form action="/articles" method="POST">
+<%= username %>
+  <div>
+    <textarea 
+    name="content" cols="50" rows="10" placeholder="What are your thoughts?"></textarea>
+  </div>
+  <br>  
+  <div>  
+    <textarea name="image_url" cols="50" rows="1" placeholder="image address:"></textarea>
+  </div>
+
+  <input type="submit" value="Create Article">
+</form>
+
+<%- include("../partials/footer") %>
